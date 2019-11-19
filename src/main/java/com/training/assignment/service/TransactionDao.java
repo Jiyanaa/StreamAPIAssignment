@@ -37,7 +37,7 @@ public class TransactionDao {
 		.filter(transaction -> transaction.getYear().equals(2011))
 		.sorted((t1,t2)-> {
 			int result = Integer.compare(t1.getYear(), t2.getYear());
-			if(t1.getYear()==t2.getYear())
+			if(result==0)
 				return Integer.compare(t1.getValue(), t2.getValue());
 			return result;
 			

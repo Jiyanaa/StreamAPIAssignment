@@ -40,7 +40,7 @@ public class TraderDao {
 		.filter(trader -> trader.getCity().equalsIgnoreCase("PUNE"))
 		.sorted((t1,t2) -> {
 			int result  = t1.getName().compareTo(t2.getName());
-			if(t1.getName().equalsIgnoreCase(t2.getName()))
+			if(result==0)
 				return t1.getCity().compareTo(t2.getCity());
 			return result;
 		})
@@ -55,7 +55,7 @@ public class TraderDao {
 				traderList.stream()
 				.sorted((t1,t2) -> {
 					int result = t1.getName().compareToIgnoreCase(t2.getName());
-					if(t1.getName().equals(t2.getName()))
+					if(result==0)
 						return t1.getCity().compareToIgnoreCase(t2.getCity());
 					return result;
 		

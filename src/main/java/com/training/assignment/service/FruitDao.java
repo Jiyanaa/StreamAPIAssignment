@@ -39,7 +39,7 @@ public class FruitDao {
 		.filter(fruit -> fruit.getCalories()<100)
 		.sorted((f1,f2)->{
 			int result = Integer.compare(f2.getCalories(), f1.getCalories());
-			if(f1.getCalories() == f2.getCalories())
+			if(result==0)
 				return Integer.compare(f1.getPrice(), f2.getPrice());
 			return result;
 		})
@@ -75,7 +75,7 @@ public class FruitDao {
 				.filter(fruit -> fruit.getColor().equalsIgnoreCase("RED"))
 				.sorted((f1,f2) -> {
 					int result = Integer.compare(f1.getPrice(), f2.getPrice());
-					if(f1.getPrice()==f1.getPrice())
+					if(result==0)
 						return f1.getName().compareTo(f2.getName());
 					return result;
 				}).collect(Collectors.toList());
